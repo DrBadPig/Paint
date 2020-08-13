@@ -7,3 +7,14 @@ C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debu
 C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.csproj.CoreCompileInputs.cache
 C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.exe
 C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.pdb
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\bin\Debug\WinForms_SimpleGraphics.exe.config
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\bin\Debug\WinForms_SimpleGraphics.exe
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\bin\Debug\WinForms_SimpleGraphics.pdb
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.csprojAssemblyReference.cache
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.Form1.resources
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.Properties.Resources.resources
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.csproj.GenerateResource.cache
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.csproj.CoreCompileInputs.cache
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.exe
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.pdb
+E:\VS Projects\Windows Forms\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.Document.resources
