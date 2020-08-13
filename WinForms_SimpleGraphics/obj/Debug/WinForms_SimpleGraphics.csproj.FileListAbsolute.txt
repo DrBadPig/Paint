@@ -1,0 +1,9 @@
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\bin\Debug\WinForms_SimpleGraphics.exe.config
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\bin\Debug\WinForms_SimpleGraphics.exe
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\bin\Debug\WinForms_SimpleGraphics.pdb
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.csprojAssemblyReference.cache
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.Properties.Resources.resources
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.csproj.GenerateResource.cache
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.exe
+C:\Users\Sergey\Desktop\WinForms_SimpleGraphics\WinForms_SimpleGraphics\obj\Debug\WinForms_SimpleGraphics.pdb
