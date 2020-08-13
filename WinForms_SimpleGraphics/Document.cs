@@ -14,64 +14,178 @@ namespace WinForms_SimpleGraphics
     {
         int x1, y1;
 
+        Color currentColor = Color.Black;
+
         // Признак первого или второго нажатия на кнопку мыши
         bool flag = false;
 
-        List<Primitive> lst = new List<Primitive>();
+        Dictionary<Primitive, Color> lst = new Dictionary<Primitive, Color>();
+        Dictionary<RectangleF, Color> cirl = new Dictionary<RectangleF, Color>();
+
+        bool line = false, rectangle = false, circle = false;
+
+        bool pencil = false, isPressed = false;
+
+        Point CurrentPoint;
+        Point PrevPoint;
 
         public Document()
         {
             InitializeComponent();
         }
 
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            rectangle = false;
+            circle = false;
+            pencil = false;
+            line = true;
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            rectangle = false;
+            circle = true;
+            line = false;
+            pencil = false;
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            rectangle = true;
+            pencil = false;
+            circle = false;
+            line = false;
+        }
+
+        private void Document_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (pencil)
+            {
+                if (isPressed)
+                {
+                    Graphics gr = CreateGraphics();
+
+                    PrevPoint = CurrentPoint;
+                    CurrentPoint = e.Location;
+
+                    Pen p = new Pen(currentColor);
+                    gr.DrawLine(p, PrevPoint, CurrentPoint);
+                }
+            }
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            colorDialog1.FullOpen = true;
+
+            colorDialog1.AllowFullOpen = true;
+
+            DialogResult result = colorDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                currentColor = colorDialog1.Color;
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            rectangle = false;
+            circle = false;
+            line = false;
+            pencil = true;
+        }
+
+        private void Document_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (pencil)
+                isPressed = false;
+        }
+
         private void Document_Paint(object sender, PaintEventArgs e)
         {
-            // Получить объект для рисования
             Graphics gr = e.Graphics;
 
-            // Перебрать все линии и нарисовать каждую линию
-            foreach (Primitive pr in lst)
+            foreach (var item in lst)
             {
-                Pen p = new Pen(Color.Blue, 3);
-                gr.DrawLine(p, pr.x1, pr.y1, pr.x2, pr.y2);
+                Pen p = new Pen(item.Value, 1);
+                gr.DrawLine(p, item.Key.x1, item.Key.y1, item.Key.x2, item.Key.y2);
+            }
+
+            foreach (var item in cirl)
+            {
+                Pen p = new Pen(item.Value, 1);
+                gr.DrawEllipse(p, item.Key);
             }
         }
 
         private void Document_MouseDown(object sender, MouseEventArgs e)
         {
-            // Создание объекта для рисования в окне
             Graphics gr = CreateGraphics();
 
             if (!flag)
             {
-                // Сохранить координаты первой точки
-                x1 = e.X;
-                y1 = e.Y;
+                if (line || circle || rectangle)
+                {
+                    // Сохранить координаты первой точки
+                    x1 = e.X;
+                    y1 = e.Y;
 
-                // Поменять флаг
-                flag = true;
+                    // Поменять флаг
+                    flag = true;
+                }
             }
             else
             {
-                // Создать карандаш
-                Pen pen = new Pen(Color.FromArgb(0, 0, 255), 1);
+                Pen pen = new Pen(currentColor, 1);
 
-                // задание формы концов линии
                 pen.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Square, System.Drawing.Drawing2D.DashCap.Flat);
 
-                // gr.DrawLine(Pens.Blue, e.X, e.Y, x1, y1);
+                if (line)
+                {
+                    gr.DrawLine(pen, e.X, e.Y, x1, y1);
 
-                // Рисование линии
-                gr.DrawLine(pen, e.X, e.Y, x1, y1);
+                    lst.Add(new Primitive(e.X, e.Y, x1, y1), currentColor);
 
-                // Сохранение линии в списке
-                lst.Add(new Primitive(e.X, e.Y, x1, y1));
+                    flag = false;
+                }
+                else if (circle)
+                {
+                    int width = e.X - x1, height = e.Y - y1;
 
-                // Поменять флаг
-                flag = false;
+                    RectangleF rect = new RectangleF(x1, y1, width, height);
+
+                    gr.DrawEllipse(pen, rect);
+
+                    cirl.Add(rect, currentColor);
+
+                    flag = false;
+                }
+                else if (rectangle)
+                {
+                    int x3 = e.X, y3 = y1, x4 = x1, y4 = e.Y;
+
+                    gr.DrawLine(pen, x1, y1, x4, y4);
+                    lst.Add(new Primitive(x1, y1, x4, y4), currentColor);
+
+                    gr.DrawLine(pen, x4, y4, e.X, e.Y);
+                    lst.Add(new Primitive(x4, y4, e.X, e.Y), currentColor);
+
+                    gr.DrawLine(pen, e.X, e.Y, x3, y3);
+                    lst.Add(new Primitive(e.X, e.Y, x3, y3), currentColor);
+
+                    gr.DrawLine(pen, x3, y3, x1, y1);
+                    lst.Add(new Primitive(x3, y3, x1, y1), currentColor);
+
+                    flag = false;
+                }
+                else if (pencil)
+                {
+                    isPressed = true;
+                    CurrentPoint = e.Location;
+                }
             }
-
-            // Освободить пямять
             gr.Dispose();
         }
 
@@ -88,4 +202,5 @@ namespace WinForms_SimpleGraphics
             public int x1, y1, x2, y2;
         }
     }
+
 }
