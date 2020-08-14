@@ -18,7 +18,7 @@ namespace WinForms_SimpleGraphics
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void createToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,6 +27,37 @@ namespace WinForms_SimpleGraphics
             im.MdiParent = this;
 
             im.Show();
+        }
+
+        private void closeCurrentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Are you sure about that?", "Closing file", MessageBoxButtons.OKCancel);
+            if (d == DialogResult.OK)
+            {
+                ActiveMdiChild.Close();
+            }
+        }
+
+        private void closeThisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Are you sure about that?", "Closing file", MessageBoxButtons.OKCancel);
+            if (d == DialogResult.OK)
+            {
+                foreach (var item in MdiChildren)
+                {
+                    item.Close();
+                }
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void saveCurrentAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
