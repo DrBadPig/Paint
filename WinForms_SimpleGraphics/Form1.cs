@@ -52,12 +52,17 @@ namespace WinForms_SimpleGraphics
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("I am so stupid", "Dont know how to implement it", MessageBoxButtons.OK);
         }
 
         private void saveCurrentAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("I am so stupid", "Dont know how to implement it", MessageBoxButtons.OK);
+        }
 
+        private void saveAllAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("I am so stupid", "Dont know how to implement it", MessageBoxButtons.OK);
         }
     }
 

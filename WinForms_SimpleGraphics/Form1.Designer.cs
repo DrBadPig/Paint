@@ -93,6 +93,7 @@
             this.saveAllAsToolStripMenuItem.Name = "saveAllAsToolStripMenuItem";
             this.saveAllAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAllAsToolStripMenuItem.Text = "Save all as";
+            this.saveAllAsToolStripMenuItem.Click += new System.EventHandler(this.saveAllAsToolStripMenuItem_Click);
             // 
             // saveCurrentAsToolStripMenuItem
             // 
@@ -113,14 +114,14 @@
             // closeThisToolStripMenuItem
             // 
             this.closeThisToolStripMenuItem.Name = "closeThisToolStripMenuItem";
-            this.closeThisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeThisToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.closeThisToolStripMenuItem.Text = "Close all";
             this.closeThisToolStripMenuItem.Click += new System.EventHandler(this.closeThisToolStripMenuItem_Click);
             // 
             // closeCurrentToolStripMenuItem
             // 
             this.closeCurrentToolStripMenuItem.Name = "closeCurrentToolStripMenuItem";
-            this.closeCurrentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeCurrentToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.closeCurrentToolStripMenuItem.Text = "Close current";
             this.closeCurrentToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentToolStripMenuItem_Click);
             // 
